@@ -9,6 +9,7 @@
   "author": "pkarira",
   "license": "ISC",
   "dependencies": {
+    "audio-loader": "^1.0.3",
     "ejs": "^2.5.7",
     "express": "^4.16.1",
     "nodemon": "^1.12.1",
