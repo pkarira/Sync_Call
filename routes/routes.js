@@ -5,6 +5,8 @@ var server =app.listen(8080,'10.42.0.1');
 var users = require('../app/controllers/users_controller');
 app.set('view engine','ejs');
 //app.use(express.static('public'));
+var cookieParser= require('cookie-parser')
+app.use(cookieParser());
 var io = socket(server);
 io.on('connection',function(socket) {
     console.log('made socket connection', socket.id);
