@@ -11,17 +11,20 @@ var socket = io.connect(url);
 btn.addEventListener('click', function(){
   // player.stop()
   socket.emit('reject', {
-      message: "reject"
+      message: "reject",
+      room: room
   });
 });
 pick.addEventListener('click',function(){
   // player.stop()
   // socket.emit('pick', {
-  //     message: "pick"
+  //     message: "pick",
+  //room: room
   // });
   socket.emit('contactInfo', {
       name:"fgdfgd",
       number:"sdsd"
+      room: room
   });
 });
 socket.on('connect', function() {
