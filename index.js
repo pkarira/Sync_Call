@@ -8,15 +8,20 @@ var io = socket(server);
 io.on('connection',function(socket) {
     console.log('made socket connection', socket.id);
     socket.on('reject', function(data){
-       socket.broadcast.emit('reject', data);
+    socket.in(room).broadcast.emit('reject', data);
+       //socket.broadcast.emit('reject', data);
    });
    socket.on('contactInfo', function(data){
-       console.log("receiver contact");
-       console.log(data.name);
-       console.log(data.number);
-       socket.broadcast.emit('contactInfo', data);
+     console.log(room);
+     socket.in(room).broadcast.emit('contactInfo', data);
+      // socket.broadcast.emit('contactInfo', data);
    });
    socket.on('pick', function(data){
-       socket.broadcast.emit('pick', data);
+     socket.in(room).broadcast.emit('pick', data);
+      // socket.broadcast.emit('pick', data);
    });
+   socket.on('room', function(room) {
+     global.room=room;
+        socket.join(room);
+    });
 });
