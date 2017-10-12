@@ -10,6 +10,7 @@ var path = require('path');
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, 'app/views'));
 app.use('/scripts/',express.static('scripts'));
+app.use('/style/',express.static('style'));
 var cookieParser= require('cookie-parser')
 app.use(cookieParser());
 var io = socket(server);
