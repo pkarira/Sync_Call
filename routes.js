@@ -25,7 +25,6 @@ io.on('connection',function(socket) {
       // socket.broadcast.emit('contactInfo', data);
    });
    socket.on('pick', function(data){
-     console.log("ininin");
      socket.in(data.room).broadcast.emit('pick', data);
       // socket.broadcast.emit('pick', data);
    });
