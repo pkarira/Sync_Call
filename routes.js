@@ -4,7 +4,7 @@ var socket = require('socket.io');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlParser = bodyParser.urlencoded({extended:false});
-var server =app.listen(8080,'10.42.0.1');
+var server =app.listen(8000,'192.168.43.120');
 var users = require('./app/controllers/users_controller');
 var path = require('path');
 app.set('view engine','ejs');
@@ -30,6 +30,7 @@ io.on('connection',function(socket) {
       // socket.broadcast.emit('pick', data);
    });
    socket.on('room', function(room) {
+     console.log(room);
         socket.join(room);
     });
 });
