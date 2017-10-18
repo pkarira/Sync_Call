@@ -8,13 +8,15 @@ var room=httpGet(url);
 var socket = io.connect(url);
 btn.addEventListener('click', function(){
    player.pause()
+   document.querySelector('h1').style.color = 'white';
   socket.emit('reject', {
       message: "reject",
       room: room
   });
 });
 pick.addEventListener('click',function(){
-  player.play();
+player.pause();
+  document.querySelector('h1').style.color = 'white';
   socket.emit('pick', {
       message: "pick",
       room: room
@@ -27,6 +29,10 @@ pick.addEventListener('click',function(){
 });
 socket.on('connect', function() {
    socket.emit('room', room);
+});
+socket.on('stop', function() {
+   player.pause();
+   document.querySelector('h1').style.color = 'white';
 });
 socket.on('contactInfo', function(data){
     player.play();

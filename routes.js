@@ -21,7 +21,6 @@ io.on('connection',function(socket) {
        //socket.broadcast.emit('reject', data);
    });
    socket.on('contactInfo', function(data){
-     console.log(data.room);
      socket.in(data.room).broadcast.emit('contactInfo', data);
       // socket.broadcast.emit('contactInfo', data);
    });
@@ -30,9 +29,11 @@ io.on('connection',function(socket) {
       // socket.broadcast.emit('pick', data);
    });
    socket.on('room', function(room) {
-     console.log(room);
         socket.join(room);
     });
+    socket.on('stop', function(data) {
+      socket.in(data.room).broadcast.emit('stop', data);
+     });
 });
 app.post('/login',urlParser,users.login);
 app.get('/',users.rooms);
