@@ -36,5 +36,8 @@ io.on('connection',function(socket) {
      });
 });
 app.post('/login',urlParser,users.login);
-app.get('/',users.rooms);
+app.get('/',function(req,res)
+{
+res.send("pmkdmkv");
+});
 app.get('/getroom',users.token);
