@@ -1,19 +1,28 @@
 {
-  "name": "call_o_brator",
+  "name": "sync_call",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "pkarira",
-  "license": "ISC",
+  "main": "routes.js",
   "dependencies": {
-    "audio-loader": "^1.0.3",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
     "express": "^4.16.1",
     "nodemon": "^1.12.1",
-    "player": "^0.6.1",
+    "require-node": "^1.1.4",
     "socket.io": "^2.0.3"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkarira/Call_O_borator-Backend-.git"
+  },
+  "author": "pkarira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkarira/Call_O_borator-Backend-/issues"
+  },
+  "homepage": "https://github.com/pkarira/Call_O_borator-Backend-#readme"
 }

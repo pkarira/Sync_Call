@@ -1,3 +1,4 @@
+
 var number = document.getElementById('number'),
       btn = document.getElementById('reject'),
       name = document.getElementById('name'),
@@ -7,15 +8,15 @@ var url='http://192.168.43.120:8000';
 var room=httpGet(url);
 var socket = io.connect(url);
 btn.addEventListener('click', function(){
-   player.pause()
-   document.querySelector('h1').style.color = 'white';
+  player.pause()
+  document.querySelector('h1').style.color = 'white';
   socket.emit('reject', {
       message: "reject",
       room: room
   });
 });
 pick.addEventListener('click',function(){
-player.pause();
+  player.pause();
   document.querySelector('h1').style.color = 'white';
   socket.emit('pick', {
       message: "pick",
@@ -42,7 +43,7 @@ socket.on('contactInfo', function(data){
     document.querySelector('h1').style.color = colors[active];
     active++;
     if (active == colors.length) active = 0;
-  }, 750);
+  },750);
     document.getElementById('name').value= data.name;
     document.getElementById('number').value=  data.number;
 });
