@@ -4,7 +4,7 @@ var number = document.getElementById('number'),
       name = document.getElementById('name'),
       pick=document.getElementById('pick');
 var player = document.getElementById("myAudio");
-var url='https://sync-call.herokuapp.com:8080';
+var url='https://sync-call.herokuapp.com/';
 var room=httpGet(url);
 var socket = io.connect(url);
 btn.addEventListener('click', function(){

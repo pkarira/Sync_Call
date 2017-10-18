@@ -1,7 +1,7 @@
 $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
-var url='https://sync-call.herokuapp.com:8080/login';
+var url='https://sync-call.herokuapp.com/login';
 var login = document.getElementById('login');
 login.addEventListener('click', function(){
 var http = new XMLHttpRequest();
@@ -10,7 +10,7 @@ http.open("POST", url, true);
 http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 http.onreadystatechange = function() {
     if(http.readyState == 4 && http.status == 200) {
-        window.location="https://sync-call.herokuapp.com:8080/"
+        window.location="https://sync-call.herokuapp.com/"
     }
 }
 http.send(params);
