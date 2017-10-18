@@ -4,7 +4,7 @@ var socket = require('socket.io');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlParser = bodyParser.urlencoded({extended:false});
-var server =app.listen(8000,'192.168.43.120');
+var server =app.listen(8080,'https://sync-call.herokuapp.com');
 var users = require('./app/controllers/users_controller');
 var path = require('path');
 app.set('view engine','ejs');
