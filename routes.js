@@ -23,6 +23,7 @@ io.on('connection',function(socket) {
    });
    socket.on('contactInfo', function(data){
      socket.in(data.room).broadcast.emit('contactInfo', data);
+     console.log('in contact info');
       // socket.broadcast.emit('contactInfo', data);
    });
    socket.on('pick', function(data){
@@ -30,6 +31,7 @@ io.on('connection',function(socket) {
       // socket.broadcast.emit('pick', data);
    });
    socket.on('room', function(room) {
+     console.log('room', room);
         socket.join(room);
     });
     socket.on('stop', function(data) {

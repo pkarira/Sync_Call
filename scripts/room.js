@@ -36,6 +36,7 @@ socket.on('stop', function() {
 });
 socket.on('contactInfo', function(data){
     player.play();
+    console.log('in room');
     var colors = ['white', 'red', 'yellow'];
     var active = 0;
     setInterval(function(){
@@ -49,7 +50,7 @@ socket.on('contactInfo', function(data){
 function httpGet(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl+"/getroom", false );
+    xmlHttp.open( "GET", theUrl+"getroom", false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
