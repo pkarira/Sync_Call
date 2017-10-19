@@ -39,5 +39,5 @@ io.on('connection',function(socket) {
      });
 });
 app.post('/login',urlParser,users.login);
-app.get('/',use);
+app.get('/',users.rooms);
 app.get('/getroom',users.token);
