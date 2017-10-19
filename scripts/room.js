@@ -1,4 +1,3 @@
-
 var number = document.getElementById('number'),
       btn = document.getElementById('reject'),
       name = document.getElementById('name'),
