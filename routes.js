@@ -4,10 +4,9 @@ var socket = require('socket.io');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlParser = bodyParser.urlencoded({extended:false});
-// var server =app.listen(process.env.PORT || 5000,function(){
-//   console.log("DONE");
-// });
-var server =app.listen(process.env.PORT || 5000,'204.236.237.197');
+var server =app.listen(process.env.PORT || 5000,function(){
+  console.log("DONE");
+});
 var users = require('./app/controllers/users_controller');
 var path = require('path');
 app.set('view engine','ejs');
