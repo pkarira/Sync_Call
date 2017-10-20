@@ -9,7 +9,7 @@ module.exports.login = function(request,response){
       response.render("room");
 };
 module.exports.logout = function(request,response){
-req.logOut();
+//req.logOut();
 req.session.destroy(function (err) {
 });
 };
