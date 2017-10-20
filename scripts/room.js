@@ -5,7 +5,7 @@ var number = document.getElementById('number'),
       logout=document.getElementById('logout');
 var player = document.getElementById("myAudio");
 var url='https://sync-call.herokuapp.com/';
-var room=httpGet(url);
+var room=httpGet(url+'getroom');
 var socket = io.connect(url);
 btn.addEventListener('click', function(){
   player.pause()
@@ -54,7 +54,7 @@ socket.on('contactInfo', function(data){
 function httpGet(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl+"getroom", false );
+    xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
