@@ -9,8 +9,8 @@ module.exports.login = function(request,response){
       response.render("room");
 };
 module.exports.logout = function(request,response){
-//req.logOut();
-req.session.destroy(function (err) {
+request.logOut();
+request.session.destroy(function (err) {
 });
 };
 module.exports.token = function(request,response){
