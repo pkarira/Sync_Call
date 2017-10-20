@@ -1,6 +1,3 @@
-// $('.message a').click(function(){
-//    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-// });
 var url='https://sync-call.herokuapp.com/login';
 var login = document.getElementById('login');
 login.addEventListener('click', function(){

@@ -8,6 +8,11 @@ module.exports.login = function(request,response){
       response.cookie('auth',request.body.mobile);
       response.render("room");
 };
+module.exports.logout = function(request,response){
+req.logOut();
+req.session.destroy(function (err) {
+});
+};
 module.exports.token = function(request,response){
   var index=request.headers['cookie'].indexOf('auth')
   response.send(request.headers['cookie'].substr(index+5,10))

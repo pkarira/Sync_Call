@@ -2,6 +2,7 @@ var number = document.getElementById('number'),
       btn = document.getElementById('reject'),
       name = document.getElementById('name'),
       pick=document.getElementById('pick');
+      logout=document.getElementById('logout');
 var player = document.getElementById("myAudio");
 var url='https://sync-call.herokuapp.com/';
 var room=httpGet(url);
@@ -21,11 +22,14 @@ pick.addEventListener('click',function(){
       message: "pick",
       room: room
   });
-  // socket.emit('contactInfo', {
-  //     name:"fgdfgd",
-  //     number:"sdsd",
-  //     room: room
-  // });
+});
+logout.addEventListener('click',function()
+{
+  socket.emit('logout', {
+      room: room
+  });
+  httpGet(url+'logout');
+  window.location="https://sync-call.herokuapp.com/"
 });
 socket.on('connect', function() {
    socket.emit('room', room);
