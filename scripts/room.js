@@ -54,7 +54,7 @@ socket.on('contactInfo', function(data){
 function httpGet(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.open( "GET", theUrl+"getroom", false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
