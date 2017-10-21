@@ -21,7 +21,7 @@ font-size: 40px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.form input {
+.form input[type="text"] {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -32,7 +32,7 @@ font-size: 40px;
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.form input[type="button"] {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -47,7 +47,7 @@ font-size: 40px;
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
+.form input[type="button"]:hover,.form input[type="button"]:active,.form input[type="button"]:focus {
   background: #43A047;
 }
 .form .message {

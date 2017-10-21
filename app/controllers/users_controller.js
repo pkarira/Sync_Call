@@ -1,20 +1,14 @@
 module.exports.getLogin = function(request,response){
 response.render("login");
 };
-module.exports.register = function(request,response){
-response.render("signup");
-};
 module.exports.login = function(request,response){
       response.cookie('auth',request.body.mobile);
-      response.render("room");
+      response.send("done");
 };
 module.exports.logout = function(request,response){
-  cookie = request.cookies;
-     for (var prop in cookie) {
-         if (!cookie.hasOwnProperty(prop))
-             continue;
-         response.cookie(prop, '', {expires: new Date(0)});
-     }
+  response.cookie("auth", "", { expires: new Date()});
+  response.cookie("io", "", { expires: new Date()});
+  response.send("Done");
 };
 module.exports.token = function(request,response){
   var index=request.headers['cookie'].indexOf('auth')
