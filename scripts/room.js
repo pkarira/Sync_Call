@@ -8,10 +8,9 @@ var url='https://sync-call.herokuapp.com/';
 //var url='http://127.0.0.1:5000/'
 var room=httpGet(url+'getroom');
 var socket = io.connect(url);
-global.textColor;
 btn.addEventListener('click', function(){
   player.pause()
-  clearInterval(global.textColor);
+  clearInterval(textColor);
   document.getElementById('name').value= "";
   document.getElementById('number').value=  "";
   socket.emit('reject', {
@@ -21,7 +20,7 @@ btn.addEventListener('click', function(){
 });
 pick.addEventListener('click',function(){
   player.pause();
-  clearInterval(global.textColor);
+  clearInterval(textColor);
   document.getElementById('name').value= "";
   document.getElementById('number').value=  "";
   socket.emit('pick', {
@@ -43,7 +42,7 @@ socket.on('connect', function() {
 });
 socket.on('stop', function() {
    player.pause();
-   clearInterval(global.textColor);
+   clearInterval(textColor);
    document.getElementById('name').value= "";
    document.getElementById('number').value=  "";
 });
@@ -52,7 +51,7 @@ socket.on('contactInfo', function(data){
     console.log('in room');
     var colors = ['white', 'red', 'yellow'];
     var active = 0;
-    global.textColor=setInterval(function(){
+    window.textColor=setInterval(function(){
     document.querySelector('h1').style.color = colors[active];
     active++;
     if (active == colors.length) active = 0;
