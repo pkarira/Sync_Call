@@ -10,7 +10,7 @@ var room=httpGet(url+'getroom');
 var socket = io.connect(url);
 btn.addEventListener('click', function(){
   player.pause()
-  clearInterval(textColor);
+  clearInterval(window.textColor);
   document.getElementById('name').value= "";
   document.getElementById('number').value=  "";
   socket.emit('reject', {
@@ -20,7 +20,7 @@ btn.addEventListener('click', function(){
 });
 pick.addEventListener('click',function(){
   player.pause();
-  clearInterval(textColor);
+  clearInterval(window.textColor);
   document.getElementById('name').value= "";
   document.getElementById('number').value=  "";
   socket.emit('pick', {
@@ -42,7 +42,7 @@ socket.on('connect', function() {
 });
 socket.on('stop', function() {
    player.pause();
-   clearInterval(textColor);
+   clearInterval(window.textColor);
    document.getElementById('name').value= "";
    document.getElementById('number').value=  "";
 });
